@@ -1,4 +1,3 @@
-# Kaizuka_NanoSYNMAP_2026
 # FRET Synaptome Analysis (NanoSYNMAP) Pipeline
 
 > **A comprehensive pipeline for synapse-level quantification from wide-field/tiled microscopy images of brain sections**
