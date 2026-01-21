@@ -1,0 +1,28 @@
+name: fret-synaptome
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8.8
+  - pip
+
+  # core scientific stack
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+
+  # image I/O / processing
+  - scikit-image
+  - imageio
+  - tifffile
+  - pillow
+  - opencv
+
+  # misc
+  - pyyaml
+  - tqdm
+
+  # pip-only packages
+  # - pip:
+  #     - some-pip-only-package==1.2.3
