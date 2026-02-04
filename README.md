@@ -51,6 +51,7 @@ project-root/
 ├── 📄 environment.yml
 ├── 📂 Pipeline/
 ├── 📂 config/
+│   └─ 📄 fret_proximity_ratio.json
 ├── 📂 data/
 │   ├── 📂 raw_images/
 │   │   └── 📂 {sample_id}/
