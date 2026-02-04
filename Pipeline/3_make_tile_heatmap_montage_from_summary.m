@@ -12,7 +12,7 @@
 % - data/raw_images/{sample_id}/acceptor/
 %     * *.txt: metadata file containing tile coordinates (read by read_coordi_metadata)
 %     * *.tif: tile images (image content is not used; only height/width are read for sizing/validation)
-% - results/summary/
+% - results/tile_summary/
 %     * a CSV file whose name contains result_tag (loaded with readtable)
 %
 % Processing (metrics):
@@ -58,8 +58,8 @@ if ~isfolder(out_dir)
     mkdir(out_dir);
 end
 
-%% 2. Load the CSV file (search in results/summary using result_tag)
-summary_dir = fullfile(project_root, 'results', 'summary');
+%% 2. Load the CSV file (search in results/tile_summary using result_tag)
+summary_dir = fullfile(project_root, 'results', 'tile_summary');
 if ~isfolder(summary_dir)
     error('Summary folder not found: %s', summary_dir);
 end
@@ -220,3 +220,4 @@ function writeSingleTiff(I, filename)
     t.write(I);
     t.close();
 end
+
