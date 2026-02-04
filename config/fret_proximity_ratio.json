@@ -1,0 +1,14 @@
+{
+  "sample_id": "ABC_1234",
+  "result_tag": "ABC_1234_20260101",
+  "start_index": 1,
+  "saturation_value": 4095,
+  "mask_min_size": 5,
+  "mask_max_area": 5000,
+  "donor_bleedthrough": 0.264,
+  "acceptor_crosstalk": 0.189,
+  "tile_width_px": 862,
+  "tile_height_px": 826,
+  "down_sampling_factor": 16,
+  "pixel_size": 0.068
+}
