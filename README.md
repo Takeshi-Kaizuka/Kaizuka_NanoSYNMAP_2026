@@ -1,4 +1,4 @@
-<img width="190" height="81" alt="image" src="https://github.com/user-attachments/assets/d2f4bf69-6c5f-4c78-af9d-88e204aabf52" /># FRET Synaptome Analysis (NanoSYNMAP) Pipeline
+# FRET Synaptome Analysis (NanoSYNMAP) Pipeline
 
 > **A comprehensive pipeline for synapse-level quantification from wide-field/tiled microscopy images of brain sections**
 
