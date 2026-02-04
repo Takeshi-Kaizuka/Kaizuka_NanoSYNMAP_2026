@@ -32,7 +32,7 @@ import pandas as pd
 import numpy as np
 
 # -----------------------------
-# Resolve project root (this script is in project-root/scripts/)
+# Resolve project root (this script is in project-root/Pipeline/)
 project_root = Path(__file__).resolve().parents[1]
 
 # Load config (sample_id, result_tag)
@@ -43,8 +43,8 @@ with config_path.open("r", encoding="utf-8") as f:
 sample_id = cfg["sample_id"]
 result_tag = cfg["result_tag"]
 
-# Input: project-root/data/csv/{sample_id}
-input_folder = project_root / "data" / "csv" / sample_id
+# Input: project-root/data/tile_data/{sample_id}
+input_folder = project_root / "data" / "tile_data" / sample_id
 if not input_folder.exists():
     raise FileNotFoundError(
         f"Input folder not found: {input_folder}\n"
@@ -53,8 +53,8 @@ if not input_folder.exists():
 if not input_folder.is_dir():
     raise NotADirectoryError(f"Input path is not a directory: {input_folder}")
 
-# Output: project-root/results/summary
-output_folder = project_root / "results" / "summary"
+# Output: project-root/results/tile_summary
+output_folder = project_root / "results" / "tile_summary"
 output_folder.mkdir(parents=True, exist_ok=True)  # ensure folder exists
 # -----------------------------
 
@@ -157,3 +157,4 @@ header = [
 
 df_out = pd.DataFrame(results_sorted, columns=header)
 df_out.to_csv(output_csv, index=False)
+
