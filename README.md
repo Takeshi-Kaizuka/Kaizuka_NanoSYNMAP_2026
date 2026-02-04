@@ -246,7 +246,7 @@ The pipeline generates multiple output files organized by analysis stage:
 ### Stage 5: ROI Summary
 - **Location:** `results/roi_data/{sample_id}/`
 - **Format:** CSV file
-- **Contents:** Consolidated ROI-level statistics and summaries across all samples
+- **Contents:** Consolidated ROI-level statistics and summaries
 
 ---
 
