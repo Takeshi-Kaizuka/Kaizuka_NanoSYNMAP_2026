@@ -58,7 +58,7 @@ ACCEPTOR_CROSSTALK = float(cfg["acceptor_crosstalk"])
 donor_folder    = project_root / "data" / "raw_images" / sample_id / "donor"
 acceptor_folder = project_root / "data" / "raw_images" / sample_id / "acceptor"
 fret_folder     = project_root / "data" / "raw_images" / sample_id / "fret"
-output_folder   = project_root / "data" / "csv" / sample_id
+output_folder   = project_root / "data" / "tile_data" / sample_id
 output_folder.mkdir(parents=True, exist_ok=True)
 # =============================
 
