@@ -49,7 +49,7 @@ The pipeline expects the following directory organization:
 project-root/
 ├── 📄 README.md
 ├── 📄 environment.yml
-├── 📂 scripts/
+├── 📂 Pipeline/
 ├── 📂 config/
 ├── 📂 data/
 │   ├── 📂 raw_images/
@@ -98,8 +98,8 @@ project-root/
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
-   cd <repository-name>
+   git clone https://github.com/Takeshi-Kaizuka/Kaizuka_NanoSYNMAP_2026.git
+   cd Kaizuka_NanoSYNMAP_2026
    ```
 
 2. **Create and activate the conda environment:**
@@ -185,19 +185,19 @@ For ROI-based analysis:
 4. **Run the pipeline:**
    ```bash
    # Step 1: Compute FRET proximity ratio
-   python scripts/1_compute_fret_proximity_ratio.py
-   
+   python Pipeline/1_compute_fret_proximity_ratio.py
+
    # Step 2: Summarize metrics
-   python scripts/2_summarize_fret_synaptome_metrics.py
-   
+   python Pipeline/2_summarize_fret_synaptome_metrics.py
+
    # Step 3: Generate heatmaps (MATLAB)
-   # Open MATLAB and run: 3_make_tile_heatmap_montage_from_summary.m
-   
+   # Open MATLAB and run: Pipeline/3_make_tile_heatmap_montage_from_summary.m
+
    # Step 4: Extract ROI data (MATLAB)
-   # Run: 4_extract_roi_synapse_metrics_from_tiles_nikon.m
-   
+   # Run: Pipeline/4_extract_roi_synapse_metrics_from_tiles_nikon.m
+
    # Step 5: Summarize ROI data
-   python scripts/5_make_roi_data_summary.py
+   python Pipeline/5_make_roi_data_summary.py
    ```
 
 ---
@@ -244,6 +244,11 @@ The pipeline generates multiple output files organized by analysis stage:
 - **Location:** `results/roi_data/{sample_id}/`
 - **Format:** CSV files
 - **Contents:** Per-ROI synapse metrics and summary statistics
+
+### Stage 5: ROI Summary
+- **Location:** `results/roi_analysis/summary/`
+- **Format:** CSV file
+- **Contents:** Consolidated ROI-level statistics and summaries across all samples
 
 ---
 
