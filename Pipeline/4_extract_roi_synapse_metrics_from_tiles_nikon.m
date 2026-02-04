@@ -5,7 +5,7 @@
 % - Config : config/fret_proximity_ratio.json
 %           The script reads sample_id, down_sampling_factor, and pixel_size from this file.
 % - Images : TIFF tiles (*.tif) and metadata (*.txt) in data/raw_images/{sample_id}/acceptor/
-% - CSV    : Tile-wise synapse metrics, Summary_metrics_*.csv, in data/csv/{sample_id}/
+% - CSV    : Tile-wise synapse metrics, Summary_metrics_*.csv, in data/tile_data/{sample_id}/
 % - ROIs   : ROI files (*.roi) or an ROI.zip in results/roi_data/roi/
 %           If {sample_id}.zip exists, it is used preferentially.
 %
@@ -48,7 +48,7 @@ sample_id = string(cfg.sample_id);
 path1 = fullfile(projectRoot, 'data', 'raw_images', sample_id, 'acceptor');
 
 % path2: Tile-level synapse metrics CSV files
-path2 = fullfile(projectRoot, 'data', 'csv', sample_id);
+path2 = fullfile(projectRoot, 'data', 'tile_data', sample_id);
 
 % path3: ROI data
 roi_input_dir = fullfile(projectRoot, 'results', 'roi_data','roi');
@@ -374,3 +374,4 @@ function roi = readImageJROI(filename)
     
     fclose(fid);
 end
+
