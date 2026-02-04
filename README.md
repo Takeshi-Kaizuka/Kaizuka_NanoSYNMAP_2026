@@ -1,4 +1,4 @@
-# FRET Synaptome Analysis (NanoSYNMAP) Pipeline
+<img width="190" height="81" alt="image" src="https://github.com/user-attachments/assets/d2f4bf69-6c5f-4c78-af9d-88e204aabf52" /># FRET Synaptome Analysis (NanoSYNMAP) Pipeline
 
 > **A comprehensive pipeline for synapse-level quantification from wide-field/tiled microscopy images of brain sections**
 
@@ -57,18 +57,16 @@ project-root/
 │   │       ├── 📂 donor/
 │   │       ├── 📂 acceptor/
 │   │       └── 📂 fret/
-│   └── 📂 csv/
+│   └── 📂 tile_data/
 │       └── 📂 {sample_id}/
 └── 📂 results/
-    ├── 📂 summary/
+    ├── 📂 tile_summary/
     ├── 📂 tile_heatmap/
     │   └── 📂 {sample_id}/
-    ├── 📂 roi_data/
-    │   ├── 📂 {sample_id}/
-    │   └── 📂 roi/
-    │       └── 📄 {sample_id}.zip
-    └── 📂 roi_analysis/
-        └── 📂 summary/
+    └── 📂 roi_data/
+        ├── 📂 {sample_id}/
+        └── 📂 roi/
+            └── 📄 {sample_id}.zip
 ```
 
 > **Note:** `{sample_id}` is a placeholder for your specific sample identifier (e.g., `sample_001`)
@@ -208,8 +206,8 @@ For ROI-based analysis:
 
 | Script | Purpose | Input | Output |
 |--------|---------|-------|--------|
-| `1_compute_fret_proximity_ratio.py` | Computes FRET efficiency and proximity ratios from raw images | TIFF images | CSV files in `data/csv/{sample_id}/` |
-| `2_summarize_fret_synaptome_metrics.py` | Aggregates tile-level metrics into summary statistics | CSV files | Summary CSV in `results/summary/` |
+| `1_compute_fret_proximity_ratio.py` | Computes FRET efficiency and proximity ratios from raw images | TIFF images | CSV files in `data/tile_data/{sample_id}/` |
+| `2_summarize_fret_synaptome_metrics.py` | Aggregates tile-level metrics into summary statistics | CSV files | Summary CSV in `results/tile_summary/` |
 | `5_make_roi_data_summary.py` | Consolidates ROI-level data | ROI CSV files | Summary CSV in `results/roi_data/{sample_id}/` |
 
 ### MATLAB Scripts
@@ -226,12 +224,12 @@ For ROI-based analysis:
 The pipeline generates multiple output files organized by analysis stage:
 
 ### Stage 1: Per-Tile Analysis
-- **Location:** `data/csv/{sample_id}/`
+- **Location:** `data/tile_data/{sample_id}/`
 - **Format:** CSV files (one per tile)
 - **Contents:** FRET efficiency, puncta counts, intensity metrics
 
 ### Stage 2: Summary Statistics
-- **Location:** `results/summary/`
+- **Location:** `results/tile_summary/`
 - **Format:** CSV file
 - **Contents:** Aggregated metrics across all tiles
 
@@ -246,7 +244,7 @@ The pipeline generates multiple output files organized by analysis stage:
 - **Contents:** Per-ROI synapse metrics and summary statistics
 
 ### Stage 5: ROI Summary
-- **Location:** `results/roi_analysis/summary/`
+- **Location:** `results/roi_data/{sample_id}/`
 - **Format:** CSV file
 - **Contents:** Consolidated ROI-level statistics and summaries across all samples
 
